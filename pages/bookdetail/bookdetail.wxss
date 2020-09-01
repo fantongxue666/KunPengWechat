@@ -1,0 +1,84 @@
+
+.top{
+  width: 100%;
+  height: 500rpx;
+  background-color: rgb(232, 232, 232);
+  padding-top: 100rpx;
+}
+.top>view{
+  width: 35%;
+  height: 78%;
+  margin:  auto;
+  
+}
+.top>view>image{
+  height: 100%;
+  width: 100%;
+}
+.center{
+  width: 94%;
+  height: 170rpx;
+  display: flex;
+  margin: auto;
+}
+.one{
+  flex: 4;
+}
+.two{
+  flex: 1;
+}
+.bottom{
+  width: 90%;
+  height: 400rpx;
+ margin: auto;
+}
+.bottom>view:first-child{
+  font-size: 36rpx;
+  margin-left: 3%;
+  margin-top: 2%;
+  margin-bottom: 20rpx;
+}
+.bottom>view:last-child{
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+font-size: 30rpx;
+line-height: 50rpx;
+
+}
+.last{
+  width: 650rpx;
+  height: 100rpx;
+  border-top: 1px solid burlywood;
+  border-bottom: 1px solid burlywood;
+  margin: auto;
+}
+.last>image{
+  width: 40rpx;
+  height: 40rpx;
+  margin-top: 4%;
+  margin-left: 3%;
+  float: left;
+}
+.last>view{
+  float: left;
+  margin-top: 4%;
+  margin-left: 3%;
+  font-size: 30rpx;
+}
+.buttons{
+  width: 600rpx;
+  height: 70rpx;
+  border: 1px solid black;
+  margin:50rpx auto;
+  font-size: 35rpx;
+  border-radius: 10rpx;
+  text-align: center;
+  line-height: 70rpx;
+  color: white;
+  background-color: #BB5500;
+}

@@ -1,0 +1,31 @@
+{
+  "pages":[
+    "pages/guide/guide", 
+    
+    "pages/book/book",
+    "pages/bookdetail/bookdetail",
+    "pages/ok/ok",
+    
+    "pages/rcjlzx/rcjlzx",
+    "pages/zdxmjz/zdxmjz",
+    "pages/shrcpy/shrcpy",
+    "pages/szzf/szzf",
+    "pages/pphd/pphd",
+    "pages/main/main",
+    "pages/poec/poec",
+    "pages/top100/top100",
+    "pages/cyld/cyld",
+    "pages/zdhytj/zdhytj",
+    "pages/hzgx/hzgx",
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "创新中心大事记",
+    "navigationBarTextStyle":"black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

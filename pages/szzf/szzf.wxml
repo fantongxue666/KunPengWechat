@@ -1,0 +1,110 @@
+<view class="top">
+数字政府生态建设进展
+</view>
+<view>
+	<scroll-view scroll-x="true" class="tab-h" scroll-left="{{scrollLeft}}">
+		<view class="tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="swichNav">项目</view>
+		<view class="tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="swichNav">ISV</view>
+	</scroll-view>
+	<swiper class="tab-content" current="{{currentTab}}" duration="300" bindchange="switchTab" style="height:{{winHeight}}rpx">
+		<swiper-item>
+			<scroll-view scroll-y="true" class="scoll-h">
+				<block wx:for="{{expertList}}">
+					<view class="item-ans">
+						<view class="avatar">
+							<image class="img" src="https://img-blog.csdnimg.cn/20200724153233798.jpg"></image>
+						</view>
+						<view class="expertInfo">
+							<view class="name">{{item.projectname}}</view>
+							<view class="tag">{{item.khmc}}</view>
+						</view>
+						<view data-index="{{item.projectuuid}}" bindtap="test" class="askBtn">查看</view>
+					</view>
+				</block>
+			</scroll-view>
+		</swiper-item>
+		<!-- isv -->
+		<swiper-item>
+			<scroll-view scroll-y="true" class="scoll-h">
+      	<view class="isv">
+            <view style="font-size:22rpx;font-weight:bold;">序号</view>
+            <view style="font-size:22rpx;font-weight:bold;">ISV</view>
+            <view style="font-size:22rpx;font-weight:bold;">已完成/产品总数</view>
+            <view class="jdt" style="font-size:22rpx;font-weight:bold;">进度</view>
+          </view>
+				<block wx:for="{{obj1}}">
+					<view class="isvs">
+            <view style="color:gray;">{{index+1}}</view>
+            <view>{{item.company_name}}</view>
+            <view>{{item.ywc}}/{{item.count}}</view>
+            <view class="jdt" data-index="{{item.company_id}}" bindtap="szzf"><progress percent="{{index==-1?'100':item.ywc*100/item.count}}" color="#FF8800" active style="margin-left: 10%;"/></view>
+          </view>
+				</block>
+			</scroll-view>
+		</swiper-item>
+	</swiper>
+</view>
+
+
+<!-- 项目 -->
+<view class="mask" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+<view class="modalDlg" wx:if="{{showModal}}">
+	<view class='img_wrap'>
+		<image src='https://img-blog.csdnimg.cn/20200724153233798.jpg'></image>
+	</view>
+	<view class='useralert_huiyuan'>{{uservip}}</view>
+	<view class='useralert_quanyi'>项目详情</view>
+	<view class='fenggexian'></view>
+	<view class='vipinfo'>{{vipinfo}}</view>
+	<view class="xiangqing" style="border-bottom:1px solid lightgray;margin-bottom:50rpx;">
+		<view style="font-size:24rpx;font-weight:bold;">序号</view>
+		<view style="font-size:24rpx;font-weight:bold;">公司列表</view>
+		<view style="font-size:24rpx;font-weight:bold;">产品列表</view>
+	</view>
+  <block wx:for="{{obj}}">
+	<view class="xiangqing">
+		<view>{{index+1}}</view>
+		<view>{{item.isvname}}</view>
+		<view style="{{item.productname=='暂无产品'?'color:red;':''}}">{{item.productname}}</view>
+	</view>
+  </block>
+
+	<view class='shutalert' bindtap="go">
+		<!-- <image src='https://img-blog.csdnimg.cn/2020072415310045.png'></image> -->
+		<image src='../../icons/no/no.png'></image>
+	</view>
+</view>
+
+<!-- isv -->
+<view class="mask1" catchtouchmove="preventTouchMove" wx:if="{{showModal1}}"></view>
+<view class="modalDlg1" wx:if="{{showModal1}}">
+	<view class='img_wrap1'>
+		<image src='https://img-blog.csdnimg.cn/20200724153233798.jpg'></image>
+	</view>
+	<view class='useralert_huiyuan1'>{{uservip}}</view>
+	<view class='useralert_quanyi1'>项目详情</view>
+	<view class='fenggexian1'></view>
+	<view class='vipinfo1'>{{vipinfo}}</view>
+	<view class="xiangqing1" style="border-bottom:1px solid lightgray;margin-bottom:50rpx;">
+		<view style="font-size:24rpx;font-weight:bold;">序号</view>
+		<view style="font-size:24rpx;font-weight:bold;">公司列表</view>
+		<view style="font-size:24rpx;font-weight:bold;">产品列表</view>
+        <view style="font-size:24rpx;font-weight:bold;">适配状态</view>
+	</view>
+	<view class="list1">
+	  <block wx:for="{{list}}">
+		<view class="xiangqing1">
+			<view>{{index+1}}</view>
+			<view>{{item.company_name}}</view>
+			<view style="{{item.productname=='暂无产品'?'color:red;':''}}">{{item.product_name}}</view>
+	    <view style="{{item.productname=='暂无适配'?'color:red;':''}}">{{item.STATUS}}</view>
+		</view>
+	  </block>
+	  
+	  </view>
+	  
+	
+		<view class='shutalert' bindtap="go1">
+			<image src='../../icons/no/no.png'></image>
+		</view>
+	</view>

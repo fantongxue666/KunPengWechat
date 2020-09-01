@@ -1,0 +1,187 @@
+.test{
+  /* margin-top:70rpx;
+  overflow-y:scroll; */
+  margin-bottom:130rpx;
+  /* height: 80%;
+  border:1px solid black; */
+}
+/*自定义底部导航开始 */
+.footer {
+  position: fixed; 
+  bottom: 0;
+  width: 100%;
+  height:100rpx; /*footer的高度*/
+  background: #ffffff;
+  border-top:1rpx solid #ccc;
+  display: flex;
+  flex-direction: row;
+  z-index: 999;
+ }
+ .footer_list{
+ width:17%;
+ height:100%;
+ text-align:center;
+ padding-top:8rpx;
+ margin-left:60rpx;
+ margin-right:62rpx;
+ }
+ .footer-image{
+  width:40%;
+  height:45%;
+ }
+ .footer-text{
+  font-size: 22rpx;
+ }
+ /*底部导航结束 */
+.top{
+  /* position: fixed; */
+  /* top: 0; */
+  width: 670rpx;
+  height: 50rpx;
+  margin: auto;
+} 
+.top>view:first-child>image{
+  height: 40rpx;
+  width: 40rpx;
+  margin-left: 1%;
+  margin-top: 1%;
+  float: left;
+}
+#text1{
+  margin-left: 2%;
+  float: left;
+}
+.top>view:last-child>view{
+  float:right;
+  font-size: 26rpx;
+  color: gray;
+  margin-top: 1%;
+}
+.books{
+  width: 600rpx;
+  height: 250rpx;
+  margin:40rpx auto;
+  display: flex;
+}
+.left{
+  flex: 2;
+}
+.left>image{
+  width: 95%;
+  height: 100%;
+}
+.right{
+  flex: 4;
+  display: flex;
+  flex-direction: column;
+  padding-left: 3%;
+}
+.right>view:first-child{
+  flex: 1;
+  font-size: 24rpx;
+  font-weight: bold;
+}
+.right>view:nth-child(2){
+  flex: 1;
+  font-size: 20rpx;
+  color: #ccc;
+}
+.right>view:nth-child(3){
+  flex: 1;
+  font-size: 20rpx;
+  color: #ccc;
+}
+.right>view:nth-child(4){
+  flex: 3;
+  position: relative;
+}
+.right>view:nth-child(4)>view{
+  position: absolute;
+  border: 1px solid black;
+  width: max-content;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  bottom: 0;
+  left: 0;
+ border-radius: 8rpx;
+ font-size: 26rpx;
+ padding-top: 10rpx;
+ padding-bottom: 10rpx;
+ letter-spacing:3rpx;
+}
+.saoma{
+  width: 300rpx;
+  height: 300rpx;
+  margin: 20% auto;
+}
+.saoma image{
+  width: 100%;
+  height: 100%;
+}
+.my{
+  width: 90%;
+  /* height: 130rpx; */
+  margin:20rpx auto;
+  display: flex;
+  border-bottom: 1px solid lightgray;
+}
+.my>view:first-child{
+  flex: 12;
+  /* border: 1px solid; */
+}
+.my>view:last-child{
+  flex: 7;
+  /* border: 1px solid; */
+}
+.bookname{
+  font-size: 32rpx;
+  margin-left: 2%;
+  margin-top: 20rpx;
+}
+.date{
+  font-size: 25rpx;
+  margin-left: 2%;
+  margin-top: 20rpx;
+  color: gainsboro;
+}
+.buttons{
+  width: 70%;
+  height: 60rpx;
+  border: 1px solid black;
+  margin:20rpx auto;
+  font-size: 25rpx;
+  border-radius: 10rpx;
+  text-align: center;
+  line-height: 60rpx;
+  color: black;
+}
+.ycs{
+  margin-left: 20rpx;
+  border: 1px solid red;
+  color: red;
+  padding-left: 10rpx;
+  padding-right: 10rpx;
+  font-size: 20rpx;
+}
+.wyjs{
+  width: 200rpx;
+  height: 200rpx;
+  margin: 150rpx auto;
+  border-radius: 90px;
+  background-color: lightskyblue;
+  color: white;
+  text-align: center;
+  line-height: 200rpx;
+  font-size: 40rpx;
+}
+.wyhs{
+  width: 200rpx;
+  height: 200rpx;
+  background-color: lightskyblue;
+  color: white;
+  text-align: center;
+  line-height: 200rpx;
+  font-size: 40rpx;
+  margin: 120rpx auto;
+  border-radius: 90px;
+}

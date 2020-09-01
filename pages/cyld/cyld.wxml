@@ -1,0 +1,235 @@
+<view style="background-color: #5555FF;">
+<view class="top_title">
+	<text class="seven">八周内新增产品数量</text>
+	</view>
+<view class="top">
+	
+	<scroll-view class="titles_parent" scroll-x>
+		<view class="titles {{currentTabsIndex3==1?'active':''}}" data-index="1" bindtap="lala">提交方案</view>
+		<view class="titles {{currentTabsIndex3==2?'active':''}}" data-index="2" bindtap="lala">资源发放</view>
+		<view class="titles {{currentTabsIndex3==3?'active':''}}" data-index="3" bindtap="lala">测试开始</view>
+		<view class="titles {{currentTabsIndex3==4?'active':''}}" data-index="4" bindtap="lala">测试结束</view>
+		<view class="titles {{currentTabsIndex3==5?'active':''}}" data-index="5" bindtap="lala">评审</view>
+		<view class="titles {{currentTabsIndex3==6?'active':''}}" data-index="6" bindtap="lala">发证</view>
+	</scroll-view>
+	<!-- echart图开始 -->
+	<view  style="width:95%;height:100%;padding-left:2.5%;">
+		<ec-canvas  id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec }}"></ec-canvas>
+	</view>
+	<!-- echart图结束 -->
+	</view>
+</view>
+
+<view style="margin-top:70%;width:100%;background-color:#F5F6F7;" >
+
+	<view class="isv">ISV拓展信息</view>
+	<view class="second">
+		<view class="ljqy" style="width:58%;display:flex;">
+			<view class="{{currentTabsIndex==1?'active':''}}" style="font-size:28rpx;flex:1;" data-index="1" bindtap="test">累计企业</view>
+			<view class="{{currentTabsIndex==2?'active':''}}" style="flex:1;line-height: 50rpx;" data-index="2" bindtap="test">累计产品数量</view>
+		</view>
+
+		<block wx:if="{{currentTabsIndex==1}}">
+			<!-- 累计企业模块开始 -->
+			<view style="margin-top:10rpx;">
+				<view class="font">系统总数（{{one_one_xtzs}}）：</view>
+				<view><progress percent="{{one_one_xtzs_percent}}" color="#9F88FF" active /></view>
+			</view>
+			<view>
+				<view class="font">已正式对接（{{one_one_yzsdj}}）：</view>
+				<view><progress percent="{{one_one_yzsdj_percent}}" color="#9F88FF" active /></view>
+			</view>
+			<view>
+				<view class="font">已同意适配（{{one_one_ytysp}}）：</view>
+				<view><progress percent="{{one_one_ytysp_percent}}" color="#9F88FF" active /></view>
+			</view>
+			<view>
+				<view class="font">本地适配（{{one_one_bdsp}}）：</view>
+				<view><progress percent="{{one_one_bdsp_percent}}" color="#9F88FF" active /></view>
+			</view>
+			<view>
+				<view class="font">总部适配（{{one_one_zbsp}}）：</view>
+				<view><progress percent="{{one_one_zbsp_percent}}" color="#9F88FF" active /></view>
+			</view>
+			<!-- 累计企业模块结束 -->
+		</block>
+		<block wx:if="{{currentTabsIndex==2}}">
+			<!-- 累计产品数量模块开始 -->
+			<view style="margin-top:10rpx;">
+				<view class="font">系统总数（{{two_two_xtzs}}）：</view>
+				<view><progress percent="{{two_two_xtzs_percent}}" color="#FF8800" active /></view>
+			</view>
+			<view>
+				<view class="font">已正式对接（{{two_two_yzsdj}}）：</view>
+				<view><progress percent="{{two_two_yzsdj_percent}}" color="#FF8800" active /></view>
+			</view>
+			<view>
+				<view class="font">已同意适配（{{two_two_ytysp}}）：</view>
+				<view><progress percent="{{two_two_ytysp_percent}}" color="#FF8800" active /></view>
+			</view>
+			<view>
+				<view class="font">本地适配（{{two_two_bdsp}}）：</view>
+				<view><progress percent="{{two_two_bdsp_percent}}" color="#FF8800" active /></view>
+			</view>
+			<view>
+				<view class="font">总部适配（{{two_two_zbsp}}）：</view>
+				<view><progress percent="{{two_two_zbsp_percent}}" color="#FF8800" active /></view>
+			</view>
+			<!-- 累计产品数量模块结束 -->
+		</block>
+	</view>
+
+	
+		<view class="hzyx">适配认证信息</view>
+		<view class="second">
+			<view class="ljqy" style="width:58%;display:flex;">
+				<view class="{{currentTabsIndex1==1?'active':''}}" style="font-size:28rpx;flex:1;" data-index="1" bindtap="test1">累计企业</view>
+				<view class="{{currentTabsIndex1==2?'active':''}}" style="flex:1;line-height: 50rpx;" data-index="2" bindtap="test1">累计产品数量</view>
+			</view>
+			<block wx:if="{{currentTabsIndex1==1}}">
+				<!-- 累计企业模块开始 -->
+				<view style="margin-top:10rpx;">
+					<view class="font">累计进入适配管道({{three_three_xtzs}}) ：</view>
+					<view><progress percent="{{three_three_xtzs_percent}}" color="#9F88FF" active /></view>
+				</view>
+				<view>
+					<view class="font">已提交适配申请（{{three_three_yzsdj}}）：</view>
+					<view><progress percent="{{three_three_yzsdj_percent}}" color="#9F88FF" active /></view>
+				</view>
+				<view>
+					<view class="font">资源已发放（{{three_three_ytysp}}）：</view>
+					<view><progress percent="{{three_three_ytysp_percent}}" color="#9F88FF" active /></view>
+				</view>
+				<view>
+					<view class="font">适配测试完成（{{three_three_bdsp}}）：</view>
+					<view><progress percent="{{three_three_bdsp_percent}}" color="#9F88FF" active /></view>
+				</view>
+				<view>
+					<view class="font">累计发放证书（{{three_three_zbsp}}）：</view>
+					<view><progress percent="{{three_three_zbsp_percent}}" color="#9F88FF" active /></view>
+				</view>
+				<!-- 累计企业模块结束 -->
+			</block>
+			<block wx:if="{{currentTabsIndex1==2}}">
+				<!-- 累计产品数量模块开始 -->
+				<view style="margin-top:10rpx;">
+					<view class="font">累计进入适配管道({{four_four_xtzs}}) ：</view>
+					<view><progress percent="{{four_four_xtzs_percent}}" color="#FF8800" active /></view>
+				</view>
+				<view>
+					<view class="font">已提交适配申请（{{four_four_yzsdj}}）：</view>
+					<view><progress percent="{{four_four_yzsdj_percent}}" color="#FF8800" active /></view>
+				</view>
+				<view>
+					<view class="font">资源已发放（{{four_four_ytysp}}）：</view>
+					<view><progress percent="{{four_four_ytysp_percent}}" color="#FF8800" active /></view>
+				</view>
+				<view>
+					<view class="font">适配测试完成（{{four_four_bdsp}}）：</view>
+					<view><progress percent="{{four_four_bdsp_percent}}" color="#FF8800" active /></view>
+				</view>
+				<view>
+					<view class="font">累计发放证书（{{four_four_zbsp}}）：</view>
+					<view><progress percent="{{four_four_zbsp_percent}}" color="#FF8800" active /></view>
+				</view>
+				<!-- 累计产品数量模块结束 -->
+			</block>
+		</view>
+
+
+
+		<view class="hzyx">项目维度整体业务系统进度</view>
+		<view class="second">
+			<view class="ljqy" style="width:58%;display:flex;">
+				<view class="{{currentTabsIndex2==1?'active':''}}" style="font-size:28rpx;flex:1;" data-index="1" bindtap="test2">备用1</view>
+				<view class="{{currentTabsIndex2==2?'active':''}}" style="flex:1;line-height: 50rpx;" data-index="2" bindtap="test2">备用2</view>
+			</view>
+			<block wx:if="{{currentTabsIndex2==1}}">
+				<!-- 累计企业模块开始 -->
+				<view style="margin-top:10rpx;">
+					<view class="font">系统总数（650）：</view>
+					<view><progress percent="70" color="#9F88FF" active /></view>
+				</view>
+				<view>
+					<view class="font">已正式对接（423）：</view>
+					<view><progress percent="40" color="#9F88FF" active /></view>
+				</view>
+				<view>
+					<view class="font">已同意适配（164）：</view>
+					<view><progress percent="80" color="#9F88FF" active /></view>
+				</view>
+				<view>
+					<view class="font">本地适配（119）：</view>
+					<view><progress percent="50" color="#9F88FF" active /></view>
+				</view>
+				<view>
+					<view class="font">总部适配（35）：</view>
+					<view><progress percent="10" color="#9F88FF" active /></view>
+				</view>
+				<!-- 累计企业模块结束 -->
+			</block>
+			<block wx:if="{{currentTabsIndex2==2}}">
+				<!-- 累计产品数量模块开始 -->
+				<view style="margin-top:10rpx;">
+					<view class="font">系统总数（650）：</view>
+					<view><progress percent="70" color="#FF8800" active /></view>
+				</view>
+				<view>
+					<view class="font">已正式对接（423）：</view>
+					<view><progress percent="40" color="#FF8800" active /></view>
+				</view>
+				<view>
+					<view class="font">已同意适配（164）：</view>
+					<view><progress percent="80" color="#FF8800" active /></view>
+				</view>
+				<view>
+					<view class="font">本地适配（119）：</view>
+					<view><progress percent="50" color="#FF8800" active /></view>
+				</view>
+				<view>
+					<view class="font">总部适配（35）：</view>
+					<view><progress percent="87" color="#FF8800" active /></view>
+				</view>
+				<!-- 累计产品数量模块结束 -->
+			</block>
+		</view>
+
+
+
+		<!-- 高校图标 -->
+		<view class="hzyx">合作院校</view>
+		<view class="first">
+			<view>
+				<block wx:for='{{list}}'>
+					<view class="school">
+						<view style="display: flex;justify-content: center;">
+							<image style="width:73%;" src="{{item.logo}}"></image>
+						</view>
+						<view>{{item.collegeName}}</view>
+					</view>
+				</block>
+
+			</view>
+		</view>
+		<button class="button-img" bindtap="toMain">查看详情</button>
+
+<!--  
+
+	<block wx:for='{{topList}}' wx:key="{{index}}">
+	
+		<view class="main" style="{{index==topList.length-1?'margin-bottom:50rpx;':''}}">
+			<view>{{item.order}}</view>
+			<view>{{item.isvname}}</view>
+			<view class="jdt" bindtap="percent" data-index="{{item.isvuuid}}">
+				<view style="width:{{item.sping_percent}};"></view>
+				<view style="width:{{item.localfinish_percent}};"></view>
+				<view style="width:{{item.spgeneral_percent}};"></view>
+			</view>
+		</view>
+	
+	</block>
+	-->
+</view>
+
+
+

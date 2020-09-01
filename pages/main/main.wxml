@@ -1,0 +1,61 @@
+<!-- 我的首页内容 -->
+<view class="top" wx:if="{{banners.length==1}}">
+<swiper autoplay> 
+<block wx:for='{{banners}}' wx:key="{{index}}">
+      <swiper-item catchtouchmove="stopTouchMove" >
+        <image src="{{item.bannerPic}}" data-id='{{index}}' class="slide-image" bindload="imageLoad" />
+      </swiper-item>
+</block>
+</swiper> 
+</view>
+<view class="top" wx:else>
+<swiper autoplay indicator-dots='{{indicatorDots}}'> 
+<block wx:for='{{banners}}' wx:key="{{index}}">
+      <swiper-item>
+        <image src="{{item.bannerPic}}" data-id='{{index}}' class="slide-image" bindload="imageLoad" />
+      </swiper-item>
+</block>
+</swiper> 
+</view>
+<view class="tab">
+<view class="{{currentTabsIndex==1?'active':''}}" data-index="1" bindtap="onTabsItemTap">生态适配<view hidden="{{currentTabsIndex!=1}}"></view></view>
+<view class="{{currentTabsIndex==4?'active':''}}" data-index="4" bindtap="onTabsItemTap">人才培养<view hidden="{{currentTabsIndex!=4}}"></view></view> 
+</view>
+<!-- tab栏内容1 -->
+<view class="tabContent">
+<view class="stsp" hidden="{{currentTabsIndex!=1}}">
+<!-- 生态适配内容开始 -->
+<block wx:for='{{firstMenuList}}' wx:key="{{index}}">
+<view data-index="{{item.menuHref}}" bindtap="toCyld">
+<view class="img"><image src="{{item.logo}}"></image></view>
+<view class="imgRight">
+<view>{{item.menuName}}</view>
+<view>{{item.menuText}}</view>
+</view>
+</view>
+</block>
+<!-- 生态适配内容结束 -->
+</view>
+
+<view class="stsp" hidden="{{currentTabsIndex!=4}}">
+<!-- 人才培养内容开始 -->
+<block wx:for='{{secondMenuList}}' wx:key="{{index}}">
+<view data-index="{{item.menuHref}}" bindtap="toSchool">
+<view class="img"><image src="{{item.logo}}"></image></view><view class="imgRight">
+<view>{{item.menuName}}</view>
+<view>{{item.menuText}}</view>
+</view>
+</view>
+</block>
+<!-- 人才培养内容结束 --> 
+</view>
+
+</view>
+<!-- 我的首页内容 -->
+
+
+
+
+
+
+

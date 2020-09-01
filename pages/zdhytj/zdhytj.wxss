@@ -1,0 +1,68 @@
+page{
+  background-color: purple;
+  height: 100%;
+}
+.bottom{
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  bottom: 0;
+  background-color: white;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.qyxx{
+  display: flex;
+  flex: 3;
+  width: 100%;
+  height: 16%;
+  padding-left: 6%;
+  align-items: center;
+    font-size: 11px;
+  font-weight: bold;
+}
+.qynr{
+  flex: 17;
+  overflow: scroll;
+}
+.qynr>view{
+  display: flex;
+  width: 90%;
+  border-bottom: 1px solid lightgray;
+  height: 60px;
+  margin: 0 auto;
+}
+.one{
+  flex: 4;
+}
+.two{
+  flex: 8;
+  /* border: 1px solid lightgray; */
+}
+.three{
+  flex: 6;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.three text{
+  position: absolute;
+  right: 10%;
+  color: purple;
+}
+.two>view:first-child{
+  font-size: 13px;
+  margin-top: 6%;
+  font-weight: bold;
+}
+.two>view:last-child{
+  font-size: 9px;
+  margin-top: 5%;
+  color: lightgray;
+}
+.one image{
+  width: 100%;
+  height: 100%;
+}

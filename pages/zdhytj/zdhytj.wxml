@@ -1,0 +1,64 @@
+<!-- 企业信息 -->
+<view class="bottom">
+<view class="qyxx">企业信息</view>
+<view class="qynr">
+<!-- ================ -->
+<view style="margin-top:10px;">
+<view class="one"><image src="/icons/hh_logo.png"></image></view>
+<view class="two">
+<view>中原云数据</view>
+<view>信息产业大厦11楼1107</view>
+</view>
+<view class="three"><text>+159,26</text></view>
+</view>
+<!-- ================ -->
+<view>
+<view class="one"><image src="/icons/qlsj_logo.png"></image></view>
+<view class="two">
+<view>潜龙数据</view>
+<view>信息产业大厦11楼1107</view>
+</view>
+<view class="three"><text>+123,6</text></view>
+</view>
+<view>
+<view class="one"><image src="/icons/xcrj_logo.png"></image></view>
+<view class="two">
+<view>信产软件</view>
+<view>信息产业大厦11楼1107</view>
+</view>
+<view class="three"><text>+179,2</text></view>
+</view>
+<view>
+<view class="one"><image src="/icons/qlsj_logo.png"></image></view>
+<view class="two">
+<view>潜龙数据</view>
+<view>信息产业大厦11楼1107</view>
+</view>
+<view class="three"><text>+123,6</text></view>
+</view>
+<view>
+<view class="one"><image src="/icons/qlsj_logo.png"></image></view>
+<view class="two">
+<view>潜龙数据</view>
+<view>信息产业大厦11楼1107</view>
+</view>
+<view class="three"><text>+123,6</text></view>
+</view>
+<view>
+<view class="one"><image src="/icons/qlsj_logo.png"></image></view>
+<view class="two">
+<view>潜龙数据</view>
+<view>信息产业大厦11楼1107</view>
+</view>
+<view class="three"><text>+123,6</text></view>
+</view>
+<view style="margin-bottom:15px;border-bottom:none;">
+<view class="one"><image src="/icons/hstc_logo.png"></image></view>
+<view class="two">
+<view>华盛天成</view>
+<view>信息产业大厦11楼1107</view>
+</view>
+<view class="three"><text>+199,261</text></view>
+</view>
+</view>
+</view>

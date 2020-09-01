@@ -1,0 +1,179 @@
+/* pages/main/main.wxss */
+.top{
+  width: 90%;
+  height: auto;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: auto;
+  margin-top: 10rpx;
+  position: relative;
+}
+swiper{
+  width: 100%;
+  height: calc(100vw * 352 / 1125);
+}
+swiper image {
+  width: 100%;
+  height: 100%;
+}
+ 
+.swiper-image {
+  height: 100%;
+  width: 100%;
+}
+ 
+.slide-image {
+  height: 100%;
+  width: 100%;
+  display: block;
+}
+/* .top image{
+  width: 100%;
+  height: 100%;
+  vertical-align:middle;
+} */
+.wznr{
+  position: absolute;
+  border: 1px solid white;
+  width: 90%;
+  height: 40%;
+  left: 5%;
+  top: 6%;
+  color: white;
+  display: flex;
+ align-items: center;
+ justify-content: center;
+  font-size: 42rpx;
+}
+.dysj{
+  position: absolute;
+  border: 1px solid white;
+  width: 90%;
+  height: 25%;
+  left: 5%;
+  bottom: 16%;
+  color: white;
+  font-size: 32rpx;
+  text-align: right;
+}
+
+.tab{
+  width: 90%;
+  height: 90rpx;
+  margin:auto;
+  margin-top: 30rpx;
+  display: flex;
+}
+.tab>view{
+  flex: 1;
+  /* border: 1px solid black; */
+  text-align: center;
+}
+.active{
+font-size: 16px;
+font-weight: bold;
+}
+.tab>view>view{
+  width: 30%;
+  height: 3px;
+  background-color: skyblue;
+  margin: auto;
+  margin-top: 3px;
+}
+.tabContent{
+  width: 100%;
+  /* margin-top: 10rpx; */
+}
+.stsp>view{
+  width: 90%;
+  height: 180rpx;
+  border: 1px solid lightgray;
+  margin:auto;
+  margin-top: 40rpx;
+  border-radius: 15rpx;
+  display: flex;
+}
+.img{
+  flex: 1;
+}
+.img image{
+  height: 38%;
+width: 67%;
+margin-top: 28%;
+margin-left: 18%;
+
+}
+.imgRight{
+  flex: 4;
+}
+.imgRight view:first-child{
+  font-size: 16px;
+  margin-top: 6%;
+  font-weight: 600;
+}
+.imgRight view:last-child{
+margin-top: 2%;
+font-size: 14px;
+color: gray;
+}
+.cyld>view{
+  width: 40%;
+  height: 100rpx;
+  border: 1px solid lightgray;
+  float: left;
+  margin-left: 45rpx;
+  margin-top: 30rpx;
+  border-radius: 10px;
+  display: flex;
+}
+.leftImg{
+  flex: 3;
+}
+.leftImg image{
+  height: 70%;
+  width: 80%;
+  margin-top: 15%;
+  margin-left: 15%;
+}
+.rightImgContent{
+  padding-top: 8%;
+  flex: 7;
+  padding-left: 4%;
+}
+/* pages/test/test.wxss */
+.header {
+  margin: 90rpx 0 90rpx 50rpx;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+  width: 650rpx;
+  height: 300rpx;
+  line-height: 450rpx;
+}
+
+.header image {
+  width: 200rpx;
+  height: 200rpx;
+}
+
+.content {
+  margin-left: 50rpx;
+  margin-bottom: 90rpx;
+}
+
+.content text {
+  display: block;
+  color: #9d9d9d;
+  margin-top: 40rpx;
+}
+
+.bottom {
+  border-radius: 80rpx;
+  margin: 70rpx 50rpx;
+  font-size: 35rpx;
+}
+.welcome{
+  /* border: 1px solid black; */
+  line-height: 40px;
+  width: 90%;
+  margin:20% auto;
+}

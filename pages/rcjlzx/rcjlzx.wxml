@@ -1,0 +1,88 @@
+<view class="top">
+人才交流中心
+</view>
+<view>
+	<!-- <scroll-view scroll-x="true" class="tab-h" scroll-left="{{scrollLeft}}"> -->
+		<!-- <view class="tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="swichNav">人才交流中心</view> -->
+		<!-- <view class="tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="swichNav">ISV</view> -->
+	<!-- </scroll-view> -->
+	<swiper class="tab-content" current="{{currentTab}}" duration="300" bindchange="switchTab" style="height:{{winHeight}}rpx">
+		<swiper-item>
+			<scroll-view scroll-y="true" class="scoll-h">
+      	<view class="isv">
+            <view style="font-size:22rpx;font-weight:bold;">序号</view>
+            <view style="font-size:22rpx;font-weight:bold;">公司名称</view>
+            <view style="font-size:22rpx;font-weight:bold;">输送人才/岗位需求</view>
+            <view class="jdt" style="font-size:22rpx;font-weight:bold;">数据统计</view>
+          </view>
+				<!-- <block wx:for="{{obj1}}">
+					<view class="isvs">
+            <view style="color:gray;">{{index+1}}</view>
+            <view>{{item.company_name}}</view>
+            <view>{{item.count}}个</view>
+            <view class="jdt"><progress percent="{{item.percent}}" color="#FF8800" active /></view>
+          </view>
+				</block> -->
+          <view class="isvs">
+            <view style="color:gray;">1</view>
+            <view>河南信息产业投资有限公司</view>
+            <view>30/50</view>
+            <view class="jdt"><progress percent="40" color="#FF8800" active /></view>
+          </view>
+          <view class="isvs">
+            <view style="color:gray;">2</view>
+            <view>黄河科技集团</view>
+            <view>16/90</view>
+            <view class="jdt"><progress percent="14" color="#FF8800" active /></view>
+          </view>
+			</scroll-view>
+		</swiper-item>
+		<!-- <swiper-item>
+			<scroll-view scroll-y="true" class="scoll-h">
+      	<view class="isv">
+            <view style="font-size:22rpx;font-weight:bold;">序号</view>
+            <view style="font-size:22rpx;font-weight:bold;">ISV</view>
+            <view style="font-size:22rpx;font-weight:bold;">产品数量</view>
+            <view class="jdt" style="font-size:22rpx;font-weight:bold;">已完成/产品总数</view>
+          </view>
+				<block wx:for="{{obj1}}">
+					<view class="isvs">
+            <view style="color:gray;">{{index+1}}</view>
+            <view>{{item.company_name}}</view>
+            <view>{{item.count}}个</view>
+            <view class="jdt"><progress percent="{{item.percent}}" color="#FF8800" active /></view>
+          </view>
+				</block>
+			</scroll-view>
+		</swiper-item> -->
+	</swiper>
+</view>
+
+
+
+<view class="mask" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+<view class="modalDlg" wx:if="{{showModal}}">
+	<view class='img_wrap'>
+		<image src='../../icons/组 25.jpg'></image>
+	</view>
+	<view class='useralert_huiyuan'>{{uservip}}</view>
+	<view class='useralert_quanyi'>项目详情</view>
+	<view class='fenggexian'></view>
+	<view class='vipinfo'>{{vipinfo}}</view>
+	<view class="xiangqing" style="border-bottom:1px solid lightgray;margin-bottom:50rpx;">
+		<view style="font-size:24rpx;font-weight:bold;">序号</view>
+		<view style="font-size:24rpx;font-weight:bold;">公司列表</view>
+		<view style="font-size:24rpx;font-weight:bold;">产品列表</view>
+	</view>
+  <block wx:for="{{obj}}">
+	<view class="xiangqing">
+		<view>{{index+1}}</view>
+		<view>{{item.isvname}}</view>
+		<view style="{{item.productname=='暂无产品'?'color:red;':''}}">{{item.productname}}</view>
+	</view>
+  </block>
+
+	<view class='shutalert' bindtap="go">
+		<image src='../../icons/错'></image>
+	</view>
+</view>

@@ -1,0 +1,68 @@
+<view class="top11">
+鲲鹏产业学院
+</view>
+<view class="top">合作高校</view>
+<!-- 合作中 -->
+<view class="first" style="position:relative;">
+	<image style="position:absolute;width:100%;height:100%;opacity:0.5;"></image>
+
+	<view class="hehehe">
+		<block wx:for="{{list}}">
+			<view class="school" data-index="{{item.uuid}}" bindtap="test">
+				<view>
+					<image style="width:100%;" src="{{item.logo}}"></image>
+				</view>
+				<view>{{item.collegeName}}</view>
+			</view>
+		</block>
+	</view>
+
+
+</view>
+
+<view class="mask" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+<view class="modalDlg" wx:if="{{showModal}}">
+	<view class='img_wrap'>
+		<image src='https://img-blog.csdnimg.cn/20200724153130893.png'></image>
+	</view>
+	<view class='useralert_huiyuan'>{{uservip}}</view>
+	<view class='useralert_quanyi'>合作高校信息</view>
+	<view class='fenggexian'></view>
+	<view class='vipinfo'>{{vipinfo}}</view>
+	<view class="xiangqing">
+		<view>合作院校：</view>
+		<view>{{obj.collegeName}}</view>
+	</view>
+	<view class="xiangqing">
+		<view>合作日期：</view>
+		<view>{{obj.hzDate}}</view>
+	</view>
+	<view class="xiangqing">
+		<view>培训日期：</view>
+		<view>{{obj.trainDate}}</view>
+	</view>
+	<view class="xiangqing">
+		<view>培训人数：</view>
+		<view>{{obj.trainNum==null?'0':obj.trainNum}}人</view>
+	</view>
+		<view class="xiangqing">
+		<view>培训师资数量：</view>
+		<view>{{obj.teachNum==null?'0':obj.teachNum}}人</view>
+	</view>
+		<view class="xiangqing">
+		<view>培训课程数量：</view>
+		<view>{{obj.courceNum==null?'0':obj.courceNum}}人</view>
+	</view>
+		<view class="xiangqing">
+		<view>鲲鹏实习人数：</view>
+		<view>{{obj.sxrs==null?'0':obj.sxrs}}人</view>
+	</view>
+	<view class="xiangqing">
+		<view>黄河云使用情况：</view>
+		<view>{{obj.isUse=='是'?'已使用':'未使用'}}</view>
+	</view>
+
+	<view class='shutalert' bindtap="go">
+		<image src='../../icons/no/no.png'></image>
+	</view>
+</view>

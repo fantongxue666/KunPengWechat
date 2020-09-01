@@ -1,0 +1,19 @@
+/* pages/pphd/pphd.wxss */
+.echart{
+  width: 100%;
+  height: 500rpx;
+  /* border: 1px solid black; */
+}
+.top{
+  /* position: fixed; */
+  /* top:0; */
+  display: flex;
+  width: 750rpx;
+  height: 100rpx;
+  background-color: #5599FF;
+  line-height: 100rpx;
+  padding-left: 5%;
+  /* margin-bottom: 100rpx; */
+  color: white;
+  /* margin-bottom: 30rpx; */
+}

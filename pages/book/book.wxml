@@ -1,0 +1,80 @@
+<!--底部导航 -->
+<view class='footer'>
+ <view class='footer_list' data-id='{{index}}' wx:for="{{listInfo}}" data-current="{{index}}" wx:key="this" bindtap="chooseImg">
+ <image class="footer-image" hidden='{{curIdx===index}}' src="{{item.imgUrl}}"></image>
+ <image class="footer-image" hidden='{{curIdx!==index}}' src="{{item.curUrl}}"></image>
+ <view class="footer-text">{{item.text}}</view>
+ </view>
+</view>
+<!--底部导航 -->
+
+
+<view class="test" hidden="{{curIdx!=0}}">
+<!-- 书库模块开始 -->
+<view class="top">
+  <view>
+    <image src="https://img-blog.csdnimg.cn/20200810094408510.png"></image><view id="text1">全部</view>
+  </view>
+  <view>
+    <view>{{bookNum}}本 ></view>
+  </view>
+</view>
+<view style="height:20rpx;"></view>
+<block wx:for="{{bookList}}">
+<view class="books">
+  <view class="left">
+    <image src="{{item.pageAddr}}"></image>
+  </view>
+  <view class="right">
+    <view>{{item.bookName}}</view>
+    <view>{{item.bookAuthor}}</view>
+    <view>豆瓣评分 {{bookScore}}</view>
+    <view>
+      <view data-index="{{item.uuid}}" wx:if="{{item.borrowBookPerson==null}}" bindtap="toDetail">可借阅</view>
+      <view  data-index="{{item.uuid}}" data-index2="{{item.borrowBookPerson}}"  bindtap="toDetail" style="color:red;border:1px solid red;letter-spacing:3rpx;" wx:if="{{item.borrowBookPerson!=null}}" >已被{{item.borrowBookPerson}}借出</view>
+    </view>
+  </view>
+</view>
+</block>
+
+
+
+<!-- 书库模块结束 -->
+</view>
+<view hidden="{{curIdx!=1}}">
+  <!-- <view class="saoma">
+    <image src="https://img-blog.csdnimg.cn/20200828130343924.png"></image>
+  </view> -->
+  <!-- <button style="font-size:30rpx;">我要借书</button> -->
+  <view class="wyjs" bindtap="jieshu">借书</view>
+  <view class="wyhs" bindtap="huanshu">还书</view>
+</view>
+<view hidden="{{curIdx!=2}}">
+
+<block wx:if="{{MyBorrowList.length==0}}">
+<view style="width:300rpx;height:230rpx;margin:100rpx auto;">
+<image style="width:100%;height:100%;" src="https://img-blog.csdnimg.cn/20200830145222470.png"></image>
+</view>
+<view style="width:100%;font-size:40rpx;text-align:center;color:gray;">暂无书籍</view>
+</block>
+<block wx:else>
+<view wx:for="{{MyBorrowList}}">
+ <view class="my">
+    <view>
+      <view class="bookname">{{item.bookName}}<text class="ycs" wx:if="{{item.status=='已超时'}}">已超时</text><text class="ycs" wx:if="{{item.status=='即将到期'}}">即将到期</text></view>
+      <view class="date">借阅时间：{{item.borrowTime==null?'暂无':item.borrowTime}}</view>
+      <view class="date" style="margin-bottom:20rpx;">归还时间：{{item.giveTime==null?'暂无':item.giveTime}}</view>
+    </view>
+     <view>
+        <view data-bookid="{{item.bookId}}" data-userid="{{item.userId}}" data-button="{{item.button}}" bindtap="waitToSure" class="buttons">{{item.button}}</view>
+     </view>
+  </view>
+</view>
+</block>
+
+
+
+ 
+  
+  
+</view>

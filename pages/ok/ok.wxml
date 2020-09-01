@@ -1,0 +1,5 @@
+<view class="success">
+  <image src="https://img-blog.csdnimg.cn/20200828130236670.png"></image>
+</view>
+<view class="first">{{first}}</view>
+<view class="second">{{second}}</view>

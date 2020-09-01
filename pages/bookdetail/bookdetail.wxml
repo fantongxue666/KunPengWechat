@@ -1,0 +1,24 @@
+<view class="top">
+  <view>
+    <image src="{{book.pageAddr}}"></image>
+  </view>
+</view>
+<view style="height:20rpx;"></view>
+<view class="center">
+  <view class="one">
+    <view style="font-size:35rpx;margin-left:3%;margin-top:3%;font-family:HYQihei 40S;">{{book.bookName}}</view>
+    <view style="font-size:26rpx;margin-left:3%;margin-top:3%;color:gray;">{{book.bookAuthor}}</view>
+  </view>
+  <view class="two">
+    <view style="font-size:26rpx;margin-top:3%;color:#FFAA33;text-align: center;">豆瓣评分</view>
+    <view style="text-align: center;margin-top:2%;font-size:60rpx;color:#FFAA33;">{{book.bookScore}}</view>
+  </view>
+</view>
+<view class="bottom">
+  <view>简介</view>
+  <view>{{book.bookBrief}}</view>
+</view>
+<view class="last">
+<image src="https://img-blog.csdnimg.cn/20200810094408510.png"></image><view>{{borrowPerson}}正在借阅</view>
+</view>
+<view class="buttons">确认借阅</view>

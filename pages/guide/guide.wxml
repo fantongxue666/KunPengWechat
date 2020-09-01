@@ -1,0 +1,46 @@
+<view wx:if="{{isHide==0}}">
+    <view wx:if="{{canIUse}}" >
+        <view class='header'>
+            <image src='https://img-blog.csdnimg.cn/20200716113400791.jpg#pic_center'></image>
+        </view>
+  
+        <view class='content'>
+            <view>申请获取以下权限</view>
+            <text>获得你的公开信息(昵称，头像等)</text>
+        </view>
+   <button class='bottom' type='primary' open-type="getPhoneNumber" bindgetphonenumber="getPhone">授权登录</button>
+
+    </view>
+    <view wx:else>请升级微信版本</view>
+</view>
+  
+<view wx:elif="{{isHide==1}}">
+<swiper indicator-dots="true">
+  <block wx:for="{{imgss}}" wx:for-index="index">
+    <swiper-item class="swiper-items">
+      <image class="swiper-image" src="{{item.guidePic}}"></image>
+      <!-- <view class="guideText">{{item.guideText}}</view> -->
+       <block wx:if="{{index==0}}">
+          
+          <view class="guideText">{{item.guideText}}</view>
+          </block>
+          <block wx:else>
+            <view class="guideText">中原鲲鹏生态创新中心</view>
+            <view class="guideText1">欢迎{{firstname}}{{job}}</view>
+          </block>
+       
+      <button class="button-img" bindtap="start" wx:if="{{index == imgss.length - 1}}">立即体验</button>
+    </swiper-item>
+  </block>
+</swiper>
+</view>
+<view wx:elif="{{isHide==2}}">
+<image class='background' src="{{imgUrl}}"></image>
+<view class="title">{{title}}</view>
+<view class="welcome">　　{{text}}</view>
+</view>
+
+
+
+
+

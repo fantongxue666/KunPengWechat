@@ -1,0 +1,68 @@
+<view class="top11">
+各行业生态建设进展
+</view>
+<view class="top">
+	<scroll-view class="nav" scroll-x>
+		<view bindtap="test" data-index="{{index}}" class="nav_item {{index==currenentIndexNav?'active':''}}" wx:for="{{nvalist}}">
+			{{item.text}}
+		</view>
+	</scroll-view>
+
+	<view class="kind">
+		<view data-index="1" class="{{currentTabsValue==1?'activesecond':''}}" bindtap="tabs">累计企业</view>
+		<view data-index="2" class="{{currentTabsValue==2?'activesecond':''}}" bindtap="tabs">累计产品数量</view>
+	</view>
+
+	<view class="first" style="margin-top:40rpx;">
+		<view class="font">系统总数（{{one_one_xtzs}}）</view>
+		<view><progress percent="{{one_one_xtzs_percent}}" color="#D1BBFF" active /></view>
+	</view>
+	<view class="first">
+		<view class="font">已正式对接（{{one_one_yzsdj}}）</view>
+		<view><progress percent="{{one_one_yzsdj_percent}}" color="#D1BBFF" active /></view>
+	</view>
+	<view class="first">
+		<view class="font">已同意适配（{{one_one_ytysp}}）</view>
+		<view><progress percent="{{one_one_ytysp_percent}}" color="#D1BBFF" active /></view>
+	</view>
+	<view class="first">
+		<view class="font">本地适配（{{one_one_bdsp}}）</view>
+		<view><progress percent="{{one_one_bdsp_percent}}" color="#D1BBFF" active /></view>
+	</view>
+	<view class="first">
+		<view class="font">总部适配（{{one_one_zbsp}}）</view>
+		<view><progress percent="{{one_one_zbsp_percent}}" color="#D1BBFF" active /></view>
+	</view>
+	<view class="first">
+		<view class="font">累计进入适配管道（{{three_three_xtzs}}）</view>
+		<view><progress percent="{{three_three_xtzs_percent}}" color="#FF8888" active /></view>
+	</view>
+	<view class="first">
+		<view class="font">已提交适配申请（{{three_three_yzsdj}}）</view>
+		<view><progress percent="{{three_three_yzsdj_percent}}" color="#FF8888" active /></view>
+	</view>
+	<view class="first">
+		<view class="font">资源已发放（{{three_three_ytysp}}）</view>
+		<view><progress percent="{{three_three_ytysp_percent}}" color="#FF8888" active /></view>
+	</view>
+	<view class="first">
+		<view class="font">适配测试完成（{{three_three_bdsp}}）</view>
+		<view><progress percent="{{three_three_bdsp_percent}}" color="#FF8888" active /></view>
+	</view>
+	<view class="first">
+		<view class="font">累计发放证书（{{three_three_zbsp}}）</view>
+		<view><progress percent="{{three_three_zbsp_percent}}" color="#FF8888" active /></view>
+	</view>
+
+	<view class="echart">
+		<!-- echart图开始 -->
+		<view style="width:100%;height:100%;">
+			<ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec }}" force-use-old-canvas="true"></ec-canvas>
+		</view>
+		<!-- echart图结束 -->
+	</view>
+
+
+
+
+</view>
