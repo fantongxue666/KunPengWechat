@@ -254,16 +254,20 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function (e) {
+    wx.stopPullDownRefresh();
     var that=this;
     var userIds=wx.getStorageSync('identify');
     that.setData({
       userId:userIds
     });
-   
-    wx.showLoading({
-      title: '正在加载',
-    })
+    var isStop=e;
+    console.log("isStop="+isStop);
+    if(isStop!=true){
+      wx.showLoading({
+        title: '正在加载',
+      })
+    }
     wx.request({
       url: env.url+'/wechat/getBooksAll',
      method: 'POST',
@@ -332,7 +336,8 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    var stop=true;
+    this.onLoad(stop);
   },
 
   /**

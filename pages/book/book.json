@@ -1,4 +1,7 @@
 {
   "usingComponents": {},
-  "navigationBarTitleText": "黄河图书"
+  "navigationBarTitleText": "黄河图书",
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark"
+  
 }
