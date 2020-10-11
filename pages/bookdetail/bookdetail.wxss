@@ -40,7 +40,7 @@
 }
 .bottom>view:last-child{
   text-overflow: -o-ellipsis-lastline;
-  overflow: hidden;
+  overflow: scroll;
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 6;
@@ -72,13 +72,6 @@ line-height: 50rpx;
 }
 .buttons{
   width: 600rpx;
-  height: 70rpx;
-  border: 1px solid black;
-  margin:50rpx auto;
-  font-size: 35rpx;
-  border-radius: 10rpx;
-  text-align: center;
-  line-height: 70rpx;
-  color: white;
-  background-color: #BB5500;
+  height: 50rpx;
+  
 }

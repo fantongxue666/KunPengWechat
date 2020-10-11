@@ -21,4 +21,4 @@
 <view class="last">
 <image src="https://img-blog.csdnimg.cn/20200810094408510.png"></image><view>{{borrowPerson}}正在借阅</view>
 </view>
-<view class="buttons">确认借阅</view>
+<view class="buttons"></view>

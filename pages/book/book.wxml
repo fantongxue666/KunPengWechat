@@ -11,12 +11,28 @@
 
 <view class="test" hidden="{{curIdx!=0}}">
 <!-- 书库模块开始 -->
+<view>
+     <view>
+        <view class="weui-search-bar">
+            <view class="weui-search-bar__form">
+            <!-- 搜索框 -->
+                <view class="weui-search-bar__box">
+                    <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+                    <input type="text" bindinput="getValue" class="weui-search-bar__input" placeholder="请输入图书名称"/>
+                </view>
+            </view>
+            <!-- 搜索按钮,调用搜索查询方法 -->
+            <view class="weui-search-bar__cancel-btn" bindtap='getBookByBookName'>搜索</view>
+        </view>
+    </view>
+</view>
+
 <view class="top">
   <view>
     <image src="https://img-blog.csdnimg.cn/20200810094408510.png"></image><view id="text1">全部</view>
   </view>
   <view>
-    <view>{{bookNum}}本 ></view>
+    <view>{{bookNum}}本</view>
   </view>
 </view>
 <view style="height:20rpx;"></view>
@@ -47,7 +63,7 @@
   </view> -->
   <!-- <button style="font-size:30rpx;">我要借书</button> -->
   <view class="wyjs" bindtap="jieshu">借书</view>
-  <view class="wyhs" bindtap="huanshu">还书</view>
+  <view wx-if="{{isShow}}" class="wyhs" bindtap="huanshu">还书</view>
 </view>
 <view hidden="{{curIdx!=2}}">
 

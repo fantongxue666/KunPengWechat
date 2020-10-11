@@ -5,8 +5,10 @@ Page({
    * 页面的初始数据
    */
   data: {
+    isShow:false,
     userId:'',
     bookNum:0,
+    bookName:'',
     MyBorrowList:[],
     bookList:[],
     result: '',
@@ -14,20 +16,26 @@ Page({
     listInfo: [
      {
      text: '书库',
-     imgUrl: 'https://img-blog.csdnimg.cn/20200810094341313.png',
-     curUrl: 'https://img-blog.csdnimg.cn/20200810094408510.png',
+     imgUrl: 'https://img-blog.csdnimg.cn/2020090712212438.png',
+     curUrl: 'https://img-blog.csdnimg.cn/2020090712212439.png',
      },
      {
      text: '借书',
-     imgUrl: 'https://img-blog.csdnimg.cn/20200810094341313.png',
-     curUrl: 'https://img-blog.csdnimg.cn/20200810094408510.png',
+     imgUrl: 'https://img-blog.csdnimg.cn/20200907122053724.png',
+     curUrl: 'https://img-blog.csdnimg.cn/20200907122053722.png',
      },
      {
      text: '我的',
-     imgUrl: 'https://img-blog.csdnimg.cn/20200810094341313.png',
-     curUrl: 'https://img-blog.csdnimg.cn/20200810094408510.png',
+     imgUrl: 'https://img-blog.csdnimg.cn/20200907121832317.png',
+     curUrl: 'https://img-blog.csdnimg.cn/20200907121832326.png',
      },
     ]
+  },
+  getValue(e){
+    const value=e.detail.value;
+    this.setData({
+      bookName:value
+    })
   },
   chooseImg:function(e){
    var id = e.currentTarget.dataset.id;
@@ -250,24 +258,58 @@ Page({
     wx.hideLoading();
    }
   },
+  getBookByBookName(){
+    var that=this;
+    var hehe=that.data.bookName;
+    console.log(hehe)
+    
+    wx.showLoading({
+      title: '正在加载',
+    })
+    wx.request({
+      url: env.url+'/wechat/getBooksAll',
+      header: {  
+        "Content-Type": "application/x-www-form-urlencoded"  
+      },  
+      data:{bookName:hehe},
+     method: 'POST',
+     success(res) {
+     console.log(res.data)
+     that.setData({
+       bookList:res.data,
+       bookNum:res.data[0].num
+     });
+     wx.hideLoading();
+      }
+   })
+  },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (e) {
+  onLoad: function (options) {
+    var identify=wx.getStorageSync('identify');
+    console.log("用户角色："+identify)
+    if(identify=='gly'){
+      this.setData({
+        isShow:true
+      });
+    }else{
+      this.setData({
+        isShow:false
+      });
+    }
+
     wx.stopPullDownRefresh();
     var that=this;
     var userIds=wx.getStorageSync('identify');
     that.setData({
       userId:userIds
     });
-    var isStop=e;
-    console.log("isStop="+isStop);
-    if(isStop!=true){
-      wx.showLoading({
-        title: '正在加载',
-      })
-    }
+   
+    wx.showLoading({
+      title: '正在加载',
+    })
     wx.request({
       url: env.url+'/wechat/getBooksAll',
      method: 'POST',
@@ -310,6 +352,8 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+   
+
     wx.hideHomeButton({
       success: function() {
       console.log('');
@@ -336,8 +380,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-    var stop=true;
-    this.onLoad(stop);
+    this.onLoad();
   },
 
   /**
