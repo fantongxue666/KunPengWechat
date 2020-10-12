@@ -69,6 +69,10 @@ Page({
                               that.setData({
                                 isHide: 2
                               });
+                            }else if(identify=='lds'){
+                              wx.redirectTo({
+                                url: '../register/register'
+                              })
                             }else if(identify=='gly'){
                              wx.redirectTo({
                                url: '../book/book'
@@ -132,7 +136,7 @@ Page({
                 console.log(res)
                 wx.setStorageSync('openid', res.data.openid);
                 wx.setStorageSync('identify', res.data.identify);
-                // wx.setStorageSync('identify', 'gly');
+                wx.setStorageSync('text', res.data.text);
                 wx.setStorageSync('firstname', res.data.firstname);
                 wx.setStorageSync('job', res.data.job);
                 wx.setStorageSync('userId', res.data.userId);
@@ -153,6 +157,10 @@ Page({
                   that.setData({
                     isHide: 2
                   });
+                }else if(res.data.identify=='lds'){
+                  wx.redirectTo({
+                    url: '../register/register'
+                  })
                 }else if(res.data.identify=='gly'){
                   wx.redirectTo({
                     url: '../book/book'

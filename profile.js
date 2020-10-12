@@ -1,4 +1,4 @@
-const current='prod'
+const current='dev'
 const profiles={
   'dev':{
     url:'http://localhost:7000'

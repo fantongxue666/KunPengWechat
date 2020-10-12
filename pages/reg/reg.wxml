@@ -1,0 +1,3 @@
+<view class="top">微信授权</view>
+<view style="text-align:center;">{{text}}</view>
+<button bindtap="get" style="position:absolute;bottom:10rpx;width:750rpx;">获取</button>

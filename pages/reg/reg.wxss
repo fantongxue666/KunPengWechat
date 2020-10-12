@@ -1,0 +1,8 @@
+.top{
+  height: 80rpx;
+  border-bottom:1px solid yellowgreen;
+  width: 30%;
+  line-height: 80rpx;
+  text-align: center;
+  margin: 15% auto;
+}

@@ -1,11 +1,15 @@
 {
   "pages":[
     "pages/guide/guide", 
-    
+
+
+    "pages/register/register",
+    "pages/reg/reg",
+    "pages/ter/ter",
+
     "pages/book/book",
     "pages/bookdetail/bookdetail",
     "pages/ok/ok",
-    
     "pages/rcjlzx/rcjlzx",
     "pages/zdxmjz/zdxmjz",
     "pages/shrcpy/shrcpy",

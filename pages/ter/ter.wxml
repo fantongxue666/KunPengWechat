@@ -1,0 +1,6 @@
+<view class="success">
+  <image src="https://img-blog.csdnimg.cn/20200828130236670.png"></image>
+</view>
+<view class="first">注册成功，点击确定立即至数据展示页</view>
+<view class="first"><text style="color:red;">{{second}}秒</text>后自动返回</view>
+<button class="return" bindtap="return">确定</button>
