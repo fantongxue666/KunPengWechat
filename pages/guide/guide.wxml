@@ -40,8 +40,12 @@
 <view class="welcome">　　{{text}}</view>
 </view>
 
-
-
+<view wx:elif="{{isHide==5}}">
+  <image class='background1' src="https://img-blog.csdnimg.cn/20201012142840456.png"></image>
+  <view class="guideText1">中原鲲鹏生态创新中心</view>
+  <view class="guideText11">数据掌上查询</view>
+  <view class="register1" bindtap="toReg">注册/登录</view>
+</view>
 
 
 

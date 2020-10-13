@@ -1,3 +1,33 @@
-<view class="top">微信授权</view>
-<view style="text-align:center;">{{text}}</view>
-<button bindtap="get" style="position:absolute;bottom:10rpx;width:750rpx;">获取</button>
+
+<view wx:if="{{isHide==0}}">
+<view class="top1">微信授权</view>
+<view style="text-align:center;font-size:30rpx;width:700rpx;margin:auto;color:yellowgreen;">{{text1}}</view>
+<button style="position:absolute;bottom:10rpx;width:750rpx;" open-type="getPhoneNumber" bindgetphonenumber="getPhone">获取</button>
+</view>
+
+
+<view wx:elif="{{isHide==1}}">
+<swiper indicator-dots="true">
+  <block wx:for="{{imgss}}" wx:for-index="index">
+    <swiper-item class="swiper-items">
+      <image class="swiper-image" src="{{item.guidePic}}"></image>
+      <!-- <view class="guideText">{{item.guideText}}</view> -->
+       <block wx:if="{{index==0}}">
+          
+          <view class="guideText">{{item.guideText}}</view>
+          </block>
+          <block wx:else>
+            <view class="guideText">中原鲲鹏生态创新中心</view>
+            <view class="guideText1">欢迎{{firstname}}{{job}}</view>
+          </block>
+       
+      <button class="button-img" bindtap="start" wx:if="{{index == imgss.length - 1}}">立即体验</button>
+    </swiper-item>
+  </block>
+</swiper>
+</view>
+<view wx:elif="{{isHide==2}}">
+<image class='background' src="{{imgUrl}}"></image>
+<view class="title">{{title}}</view>
+<view class="welcome">　　{{text}}</view>
+</view>

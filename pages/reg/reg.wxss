@@ -1,8 +1,212 @@
-.top{
+.top1{
   height: 80rpx;
   border-bottom:1px solid yellowgreen;
   width: 30%;
   line-height: 80rpx;
   text-align: center;
   margin: 15% auto;
+}
+/* pages/guide/guide.wxss */
+swiper {
+  /*这个是绝对布局*/
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.swiper-image {
+  height: 100%;
+  width: 100%;
+  /*透明度*/
+  opacity: 0.9;
+}
+
+.button-img {
+  /*这个是绝对布局*/
+  position: relative;
+  bottom: 90px;
+  height: 40px;
+  width: 120px;
+  opacity: 0.6;
+}
+/* pages/main/main.wxss */
+.top{
+  width: 90%;
+  height: 100px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: auto;
+  margin-top: 10rpx;
+}
+.top image{
+  width: 100%;
+  height: 100%;
+}
+.tab{
+  width: 90%;
+  height: 90rpx;
+  margin:auto;
+  margin-top: 30rpx;
+  display: flex;
+}
+.tab>view{
+  flex: 1;
+  /* border: 1px solid black; */
+  text-align: center;
+}
+.active{
+font-size: 16px;
+font-weight: bold;
+}
+.tab>view>view{
+  width: 60%;
+  height: 3px;
+  background-color: skyblue;
+  margin: auto;
+  margin-top: 3px;
+}
+.tabContent{
+  width: 100%;
+  /* margin-top: 10rpx; */
+}
+.stsp>view{
+  width: 90%;
+  height: 180rpx;
+  border: 1px solid lightgray;
+  margin:auto;
+  margin-top: 40rpx;
+  border-radius: 15rpx;
+  display: flex;
+}
+.img{
+  flex: 1;
+}
+.img image{
+  height: 60%;
+  width: 100%;
+  margin-top: 20%;
+}
+.imgRight{
+  flex: 4;
+}
+.imgRight view:first-child{
+  font-size: 16px;
+  margin-top: 6%;
+  font-weight: 600;
+}
+.imgRight view:last-child{
+margin-top: 2%;
+font-size: 14px;
+color: gray;
+}
+.cyld>view{
+  width: 40%;
+  height: 100rpx;
+  border: 1px solid lightgray;
+  float: left;
+  margin-left: 45rpx;
+  margin-top: 30rpx;
+  border-radius: 10px;
+  display: flex;
+}
+.leftImg{
+  flex: 3;
+}
+.leftImg image{
+  height: 70%;
+  width: 80%;
+  margin-top: 15%;
+  margin-left: 15%;
+}
+.rightImgContent{
+  padding-top: 8%;
+  flex: 7;
+  padding-left: 4%;
+}
+/* pages/test/test.wxss */
+.header {
+  margin: 90rpx 0 90rpx 50rpx;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+  width: 650rpx;
+  height: 300rpx;
+  line-height: 450rpx;
+}
+
+.header image {
+  width: 200rpx;
+  height: 200rpx;
+}
+
+.content {
+  margin-left: 50rpx;
+  margin-bottom: 90rpx;
+}
+
+.content text {
+  display: block;
+  color: #9d9d9d;
+  margin-top: 40rpx;
+}
+
+.bottom {
+  border-radius: 80rpx;
+  margin: 70rpx 50rpx;
+  font-size: 35rpx;
+}
+.welcome{
+  line-height: 60rpx;
+  width: 90%;
+  margin:5% auto;
+  font-size: 34rpx;
+  color: #ccc;
+}
+.guideText{
+  position: absolute;
+width: 80%;
+/* height: 100px; */
+top: 45%;
+left: 10%;
+color: black;
+font-size: 18px;
+/* border: 2px solid black; */
+font-weight: 100;
+letter-spacing: 3rpx;
+text-align: center;
+
+}
+.guideText1{
+  position: absolute;
+width: 80%;
+/* height: 100px; */
+top: 50%;
+left: 10%;
+color: black;
+font-size: 18px;
+/* border: 2px solid black; */
+font-weight: 100;
+letter-spacing: 3rpx;
+text-align: center;
+
+}
+.title{
+  /* border: 1px solid black; */
+  display: flex;
+  margin: auto;
+  width: 90%;
+  /* height: 100rpx; */
+  padding-top: 100rpx;
+  align-items: center;
+  justify-content: center; 
+  font-size: 40rpx;
+  font-weight: bold;
+  font-family:"Times New Roman",Georgia,Serif;
+  color: #ccc;
+}
+.background {
+  width: 100%;
+  height: 100%;
+  position:fixed; 
+  background-size:100% 100%;
+  z-index: -1;
 }

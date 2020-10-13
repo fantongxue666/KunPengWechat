@@ -4,7 +4,7 @@ Page({
   data: {
      //判断小程序的API，回调，参数，组件等是否在当前版本可用。
      canIUse: wx.canIUse('button.open-type.getUserInfo'),
-     isHide: 0,
+     isHide: 5,
      imgss:[],
      imgUrl:"",
      title:"",
@@ -20,25 +20,55 @@ Page({
     })
     // wx.navigateBack();
   },
+  toReg:function(){
+    wx.redirectTo({
+      url: '../reg/reg'
+    })
+  },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     var that = this;
+    wx.showLoading({
+      title: '加载中...',
+    })
+    wx.request({
+      url: env.url+'/wechat/isHave',
+     method: 'POST',
+     success(res) {
+         if(res.data==1){
+            that.setData({
+              isHide:5
+           });
+         }else{
+           that.setData({
+             isHide:0
+           })
+         }
+        
+      }
+   })
     wx.request({
       url: env.url+'/wechat/getGuidePic',
      method: 'POST',
      success(res) {
-         console.log(res)
+         console.log(res.data)
          that.setData({
            imgss:res.data
          });
       }
    })
-   wx.showLoading({
-     title: '加载中...',
-   })
+   wx.request({
+    url: env.url+'/wechat/getText',
+   method: 'POST',
+   success(res) {
+       console.log("tttttttttttttttttttttttt"+res.data)
+       wx.setStorageSync('text', res.data);
+    }
+ })
+  
    wx.request({
     url: env.url+'/wechat/welcome',
    method: 'POST',
@@ -60,6 +90,7 @@ Page({
               console.log("手机号加密内容："+phone1)
               console.log("iv内容："+phone2)
                 if (phone1!="") {
+                  
                             var identify=wx.getStorageSync('identify');
                             if(identify=='ld'){
                               that.setData({
@@ -69,10 +100,6 @@ Page({
                               that.setData({
                                 isHide: 2
                               });
-                            }else if(identify=='lds'){
-                              wx.redirectTo({
-                                url: '../register/register'
-                              })
                             }else if(identify=='gly'){
                              wx.redirectTo({
                                url: '../book/book'
@@ -91,9 +118,18 @@ Page({
                 } else {
                     // 用户没有授权
                     // 改变 isHide 的值，显示授权页面
-                    that.setData({
+                    console.log("执行了#######################")
+                    var bl = that.data.isHide;
+                    if(bl!=5){
+                      that.setData({
                         isHide: 0
-                    });
+                     });
+                    }else{
+                      that.setData({
+                        isHide:5
+                      })
+                    }
+                    
                 }
             }
         });
@@ -157,10 +193,6 @@ Page({
                   that.setData({
                     isHide: 2
                   });
-                }else if(res.data.identify=='lds'){
-                  wx.redirectTo({
-                    url: '../register/register'
-                  })
                 }else if(res.data.identify=='gly'){
                   wx.redirectTo({
                     url: '../book/book'
